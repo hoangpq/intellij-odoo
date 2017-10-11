@@ -1,0 +1,40 @@
+<idea-plugin url="">
+    <name>Odoo Support</name>
+    <id>intellij-odoo</id>
+    <change-notes><![CDATA[]]></change-notes>
+    <description><![CDATA[]]></description>
+    <version>SNAPSHOT</version>
+    <vendor>JetBrains</vendor>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.python</depends>
+    <!-- <depends>com.intellij.modules.javascript</depends> -->
+
+    <idea-version since-build="172.0" until-build="173.*"/>
+
+    <extensionPoints>
+        <!-- extension points -->
+    </extensionPoints>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <!-- framework detector -->
+        <framework.detector implementation="com.intellij.odoo.cli.OdooCliFrameworkDetector"/>
+        <fileBasedIndex implementation="com.intellij.odoo.index.OdooNameIndex"/>
+
+        <!-- highlight -->
+        <highlightUsagesHandlerFactory
+                implementation="com.intellij.odoo.ide.highlight.OdooHighlightExitPointsHandlerFactory"/>
+
+        <!-- navigation -->
+        <gotoRelatedProvider implementation="com.intellij.odoo.navigation.OdooGotoRelatedProvider"/>
+
+    </extensions>
+
+    <extensions defaultExtensionNs="com.jetbrain.odoo">
+    </extensions>
+    <actions>
+        <group text="MicroPython" id="micropython" popup="true" icon="/icons/odoo.jpeg">
+        </group>
+    </actions>
+</idea-plugin>
