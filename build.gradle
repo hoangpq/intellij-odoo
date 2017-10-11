@@ -24,7 +24,7 @@ intellij {
     version ideaVersion
     pluginName 'intellij-odoo'
     downloadSources true
-    plugins = []
+    plugins = ['JavaScriptLanguage']
     if (hasPythonPlugin) {
         plugins += [pythonPlugin]
     }

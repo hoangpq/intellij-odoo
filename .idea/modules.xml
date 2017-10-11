@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/intellij-odoo.iml" filepath="$PROJECT_DIR$/.idea/modules/intellij-odoo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intellij-odoo.iml" filepath="$PROJECT_DIR$/intellij-odoo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/intellij-odoo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/intellij-odoo_main.iml" group="intellij-odoo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/intellij-odoo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/intellij-odoo_test.iml" group="intellij-odoo" />
     </modules>
