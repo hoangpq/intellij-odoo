@@ -18,6 +18,7 @@ apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 def hasPythonPlugin = project.hasProperty('pythonPlugin')
+def hasPyCharm = project.hasProperty('pycharmPath')
 
 // intellij configuration
 intellij {
@@ -25,6 +26,9 @@ intellij {
     pluginName 'intellij-odoo'
     downloadSources true
     plugins = ['JavaScriptLanguage']
+    if (hasPyCharm) {
+        alternativeIdePath pycharmPath
+    }
     if (hasPythonPlugin) {
         plugins += [pythonPlugin]
     }
@@ -32,9 +36,17 @@ intellij {
 
 repositories {
     mavenCentral()
+    if (hasPyCharm) {
+        flatDir {
+            dirs "$pycharmPath/lib"
+        }
+    }
 }
 
 dependencies {
+    if (hasPyCharm) {
+        compileOnly name: 'pycharm'
+    }
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

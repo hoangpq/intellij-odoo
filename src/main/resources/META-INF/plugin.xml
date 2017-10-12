@@ -12,6 +12,12 @@
 
     <idea-version since-build="172.0" until-build="173.*"/>
 
+    <project-components>
+        <component>
+            <implementation-class>com.intellij.odoo.project.OdooProjectComponent</implementation-class>
+        </component>
+    </project-components>
+
     <extensionPoints>
         <!-- extension points -->
     </extensionPoints>
@@ -20,6 +26,8 @@
         <!-- framework detector -->
         <framework.detector implementation="com.intellij.odoo.cli.OdooCliFrameworkDetector"/>
         <fileBasedIndex implementation="com.intellij.odoo.index.OdooNameIndex"/>
+        <!-- psi -->
+        <psi.referenceContributor implementation="com.intellij.odoo.psi.OdooPsiReferenceContributor" />
         <!-- highlight -->
         <highlightUsagesHandlerFactory
                 implementation="com.intellij.odoo.ide.highlight.OdooHighlightExitPointsHandlerFactory"/>
